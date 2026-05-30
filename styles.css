@@ -188,6 +188,109 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+.latest-news {
+  display: grid;
+  gap: 26px;
+  padding: 58px 0 34px;
+}
+
+.latest-news-copy {
+  display: grid;
+  gap: 12px;
+  max-width: 840px;
+}
+
+.latest-news-copy h1 {
+  margin-bottom: 0;
+  font-size: clamp(42px, 6vw, 76px);
+}
+
+.latest-news-copy p {
+  max-width: 640px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.news-marquee {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.news-marquee::before,
+.news-marquee::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 82px;
+  content: "";
+  pointer-events: none;
+}
+
+.news-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--paper) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.news-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--paper) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.news-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-news 34s linear infinite;
+}
+
+.news-marquee:hover .news-track,
+.news-marquee:focus-within .news-track {
+  animation-play-state: paused;
+}
+
+.news-track a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: max-content;
+  padding: 18px 22px;
+  border-right: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.news-track span {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(15, 143, 138, 0.12);
+  color: var(--accent-strong);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+@keyframes scroll-news {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-track {
+    animation: none;
+  }
+}
+
 .ticker {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -647,6 +750,10 @@ h1 {
     aspect-ratio: 16 / 10;
   }
 
+  .latest-news {
+    padding-top: 40px;
+  }
+
   .ticker {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -675,6 +782,24 @@ h1 {
 
   .hero-form {
     display: grid;
+  }
+
+  .latest-news {
+    padding: 32px 0 26px;
+  }
+
+  .latest-news-copy p {
+    font-size: 16px;
+  }
+
+  .news-marquee::before,
+  .news-marquee::after {
+    width: 36px;
+  }
+
+  .news-track a {
+    padding: 15px 18px;
+    font-size: 14px;
   }
 
   .ticker {
