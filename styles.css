@@ -367,6 +367,78 @@ h1 {
   font-size: 13px;
 }
 
+.contact-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1fr);
+  gap: 22px;
+  align-items: stretch;
+  margin-top: 42px;
+  padding: 28px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.contact-copy {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+}
+
+.contact-copy h2 {
+  margin-bottom: 0;
+  font-size: clamp(30px, 3.2vw, 44px);
+  line-height: 1.1;
+}
+
+.contact-copy p {
+  max-width: 560px;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.contact-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.contact-list a:hover,
+.map-card a:hover {
+  color: var(--accent-strong);
+}
+
+.map-card {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper-soft);
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  border: 0;
+}
+
+.map-card a {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 10px 28px rgba(25, 23, 22, 0.12);
+}
+
 .directory {
   padding: 56px 0 70px;
 }
@@ -559,6 +631,7 @@ h1 {
 
   .hero,
   .layout,
+  .contact-section,
   .directory-grid,
   .page-layout,
   .stats-grid {
