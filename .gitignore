@@ -1,0 +1,28 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs and local runtime files
+*.log
+*.pid
+*.tmp
+tmp/
+temp/
+.cache/
+
+# Dependency/build output, in case the static site later gains tooling
+node_modules/
+dist/
+build/
+.parcel-cache/
+.vite/
+
+# Local environment secrets
+.env
+.env.*
+!.env.example
